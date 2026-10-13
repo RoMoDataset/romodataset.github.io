@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6568df">
+
+  <title>RoMo — Open Data and Tools for Motion Generation</title>
+  <meta name="description" content="RoMo is an open ecosystem of large-scale, richly organized motion datasets and shared tools for motion generation research: RoMo full-body motion, RoMo Hands bimanual hand motion, and the Motion Toolbox.">
+  <meta name="keywords" content="motion generation, text-to-motion, human motion dataset, hand motion, open research, RoMo, RoMo Hands, Motion Toolbox">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RoMo: Open Data and Tools for Motion Generation">
+  <meta property="og:description" content="Large-scale, richly organized motion datasets and a shared toolbox for reproducible motion generation research.">
+  <meta property="og:image" content="static/romo-logo.png">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" type="image/png" href="static/romo-logo.png">
+  <link rel="apple-touch-icon" href="static/romo-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/ecosystem.css?v=2">
+</head>
+
+<body>
+  <header class="site-header" id="site-header">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="RoMo home">
+        <img class="brand-mark" src="static/romo-logo.png" alt="">
+        <span>RoMo</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#why">Why RoMo</a>
+        <a href="#datasets">Datasets</a>
+        <a href="#toolbox">Toolbox</a>
+        <a href="#stack">How it fits</a>
+        <a href="#cite">Cite</a>
+      </div>
+
+      <a class="nav-cta" href="https://huggingface.co/RoMoDataset" target="_blank" rel="noopener">
+        <span aria-hidden="true">🤗</span> RoMoDataset
+      </a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <div class="venue-pill">Open motion generation research</div>
+        <h1>RoMo</h1>
+        <p class="hero-subtitle">
+          An open ecosystem of large-scale,
+          <span class="acronym"><u>R</u>ichly <u>O</u>rganized</span>
+          <span class="acronym"><u>Mo</u>tion</span> data and shared tools
+        </p>
+        <p class="hero-lede">
+          Full-body and hand-motion datasets built on one collection stack, one semantic taxonomy,
+          and one toolbox for measuring, converting, and viewing motion.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-dark" href="#datasets">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+            Explore the datasets
+          </a>
+          <a class="button button-light" href="https://huggingface.co/RoMoDataset" target="_blank" rel="noopener">
+            <span aria-hidden="true">🤗</span> Hugging Face
+          </a>
+          <a class="button button-light" href="https://github.com/RoMoDataset/motion-toolbox" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v12H4zM9 8V5h6v3M4 12h16"/></svg>
+            Motion Toolbox
+          </a>
+        </div>
+      </div>
+
+      <div class="stats-grid reveal" aria-label="Ecosystem headline statistics">
+        <article class="stat">
+          <strong data-count="2">2</strong>
+          <span>open datasets</span>
+        </article>
+        <article class="stat">
+          <strong data-count="1.36" data-suffix="M">1.36M</strong>
+          <span>text-paired motion sequences</span>
+        </article>
+        <article class="stat">
+          <strong data-count="2122" data-suffix=" h">2,122 h</strong>
+          <span>of motion</span>
+        </article>
+        <article class="stat">
+          <strong data-count="1">1</strong>
+          <span>shared toolbox</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section band" id="why">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Why RoMo exists</p>
+          <h2>Motion generation deserves the data that moved language, image, and video</h2>
+          <p>
+            Generative models in other fields scaled because the community shared large, well-curated data and agreed on how to measure progress.
+            3D human motion has lagged behind.
+          </p>
+        </div>
+
+        <div class="problem-grid reveal">
+          <article class="problem-card">
+            <span class="problem-kicker">The data gap</span>
+            <h3>Small and clean, or large and noisy</h3>
+            <p>
+              Researchers choose between high-fidelity motion capture that is too small for modern generative models and
+              in-the-wild collections dominated by static or low-quality sequences. Hands are often missing entirely,
+              or treated as rigid end-effectors.
+            </p>
+          </article>
+          <article class="problem-card">
+            <span class="problem-kicker">The comparison gap</span>
+            <h3>Every paper, its own pipeline</h3>
+            <p>
+              Formats, representations, and evaluators are re-implemented from project to project.
+              Aggregate scores hide category-specific failures, and results across papers are hard to compare or reproduce.
+            </p>
+          </article>
+        </div>
+
+        <div class="mission reveal">
+          <p class="eyebrow">Our goal</p>
+          <p class="mission-statement">
+            Enable open motion generation research by giving the community
+            <strong>large-scale, carefully curated data</strong> and
+            <strong>shared tools</strong> to build on, compare against, and extend.
+          </p>
+        </div>
+
+        <div class="feature-grid reveal">
+          <article class="feature-card">
+            <span class="feature-index">01 · Open data</span>
+            <h3>Scale with quality gates</h3>
+            <p>In-the-wild motion distilled through aggressive filtering, then released on Hugging Face for research use.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-index">02 · Shared organization</span>
+            <h3>One taxonomy, rich language</h3>
+            <p>A three-level semantic taxonomy and detailed captions make it possible to evaluate per category, not just on average.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-index">03 · Shared tools</span>
+            <h3>Comparable by default</h3>
+            <p>The Motion Toolbox standardizes metrics, format conversion, and visualization so results line up across papers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="datasets">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Datasets</p>
+        <h2>Two datasets, one foundation</h2>
+        <p>Each dataset has its own project page, paper, and Hugging Face release. Both share RoMo's collection stack and taxonomy.</p>
+      </div>
+
+      <div class="dataset-grid">
+        <article class="dataset-card reveal">
+          <div class="dataset-head">
+            <img class="dataset-logo" src="static/romo-logo.png" alt="">
+            <div>
+              <p class="dataset-venue">CVPR 2026</p>
+              <h3>RoMo</h3>
+              <p class="dataset-kind">Full-body human motion</p>
+            </div>
+          </div>
+          <p class="dataset-copy">
+            In-the-wild SMPL motion distilled from about 125K hours of web video, where only about 1% survives a
+            taxonomy-aware filtering pipeline. Every sequence carries detailed captions and sits in a three-level semantic taxonomy.
+          </p>
+          <div class="dataset-stats">
+            <span><strong>813,938</strong> sequences</span>
+            <span><strong>1,238 h</strong> of motion</span>
+            <span><strong>54 → 2,065 → 28,874</strong> taxonomy nodes</span>
+          </div>
+          <div class="dataset-formats" aria-label="Available formats">
+            <span>SMPL</span><span>HumanML3D 263-D</span><span>272-D</span>
+          </div>
+          <div class="dataset-actions">
+            <a class="button button-dark" href="https://davidzhang73.github.io/romo-website/" target="_blank" rel="noopener">Project page <span aria-hidden="true">↗</span></a>
+            <a class="button button-light" href="https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_RoMo_A_Large-Scale_Richly_Organized_Dataset_and_Semantic_Taxonomy_for_CVPR_2026_paper.pdf" target="_blank" rel="noopener">Paper</a>
+            <details class="hf-menu">
+              <summary class="button button-light"><span aria-hidden="true">🤗</span> Dataset</summary>
+              <div class="hf-menu-list">
+                <a href="https://huggingface.co/datasets/RoMoDataset/RoMo-SMPL" target="_blank" rel="noopener">RoMo-SMPL</a>
+                <a href="https://huggingface.co/datasets/RoMoDataset/RoMo-HML-263" target="_blank" rel="noopener">RoMo-HML-263</a>
+                <a href="https://huggingface.co/datasets/RoMoDataset/RoMo-272" target="_blank" rel="noopener">RoMo-272</a>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="dataset-card reveal">
+          <div class="dataset-head">
+            <img class="dataset-logo" src="static/romo-hands-mark-ink.png" alt="">
+            <div>
+              <p class="dataset-venue">NeurIPS 2026</p>
+              <h3>RoMo Hands</h3>
+              <p class="dataset-kind">Bimanual hand motion</p>
+            </div>
+          </div>
+          <p class="dataset-copy">
+            In-the-wild bimanual MANO motion with five caption levels, from action tags to paragraphs about finger articulation,
+            a 393-D hand representation, and a benchmark that scores both semantic alignment and physical plausibility.
+          </p>
+          <div class="dataset-stats">
+            <span><strong>541,929</strong> sequences</span>
+            <span><strong>884 h</strong> of motion</span>
+            <span><strong>5</strong> caption levels</span>
+          </div>
+          <div class="dataset-formats" aria-label="Available formats">
+            <span>MANO</span><span>393-D R<sub>hand</sub></span>
+          </div>
+          <div class="dataset-actions">
+            <a class="button button-dark" href="https://romodataset.github.io/romo-hands/" target="_blank" rel="noopener">Project page <span aria-hidden="true">↗</span></a>
+            <a class="button button-light" href="https://romodataset.github.io/romo-hands/static/paper/RoMo_Hands.pdf" target="_blank" rel="noopener">Paper</a>
+            <a class="button button-light" href="https://huggingface.co/datasets/RoMoDataset/RoMo-Hands" target="_blank" rel="noopener"><span aria-hidden="true">🤗</span> Dataset</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section band" id="toolbox">
+      <div class="shell toolbox-layout">
+        <div class="toolbox-copy reveal">
+          <p class="eyebrow">Code</p>
+          <h2>Motion Toolbox</h2>
+          <p class="toolbox-lede">
+            One open-source library to measure, convert, and view motion across the ecosystem,
+            so a result on RoMo means the same thing in every paper.
+          </p>
+          <ul class="toolbox-list">
+            <li>
+              <strong>Standard metrics</strong>
+              <span>FID, R-Precision, diversity, multimodality, and per-category scores computed the same way everywhere.</span>
+            </li>
+            <li>
+              <strong>Format conversion</strong>
+              <span>SMPL, HumanML3D 263-D, 272-D, and MANO to and from the 393-D bimanual hand representation.</span>
+            </li>
+            <li>
+              <strong>Visualization</strong>
+              <span>Interactive browser viewers and GLB export for bodies and hands, the same pipeline behind our project-page galleries.</span>
+            </li>
+          </ul>
+          <a class="button button-dark" href="https://github.com/RoMoDataset/motion-toolbox" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            View on GitHub
+          </a>
+        </div>
+
+        <div class="code-card reveal" aria-label="Motion Toolbox quick start">
+          <div class="code-card-head">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="code-title">quickstart</span>
+          </div>
+<pre><code><span class="c"># install</span>
+git clone https://github.com/RoMoDataset/motion-toolbox
+cd motion-toolbox && uv sync
+
+<span class="c"># visualize RoMo bodies and RoMo Hands</span>
+<span class="k">from</span> motion_toolbox.visualization <span class="k">import</span> Visualizer
+<span class="k">from</span> motion_toolbox.visualization.hand_visualizer <span class="k">import</span> (
+    visualize_hand_motion,
+)
+
+Visualizer().visualize(body_motion, <span class="s">"body.html"</span>)
+visualize_hand_motion(hand_motion_393d, <span class="s">"hands.html"</span>)</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="stack">
+      <div class="section-heading reveal">
+        <p class="eyebrow">How it fits together</p>
+        <h2>One collection stack, many kinds of motion</h2>
+        <p>
+          Every RoMo dataset starts from the same curated web video, temporal segmentation, and semantic taxonomy.
+          New motion types branch from that shared foundation, and the Motion Toolbox ties them back together.
+        </p>
+      </div>
+
+      <div class="stack-flow reveal" aria-label="RoMo ecosystem pipeline">
+        <div class="stack-node source">
+          <span class="stack-step">Source</span>
+          <strong>Curated web video</strong>
+          <small>Meta, scene, and human filters</small>
+        </div>
+        <span class="stack-arrow" aria-hidden="true"></span>
+        <div class="stack-node core">
+          <span class="stack-step">Shared foundation</span>
+          <strong>RoMo collection stack</strong>
+          <small>Semantic segmentation · three-level taxonomy · captioning</small>
+        </div>
+        <span class="stack-arrow" aria-hidden="true"></span>
+        <div class="stack-branches">
+          <div class="stack-node branch">
+            <img src="static/romo-logo.png" alt="">
+            <div>
+              <strong>RoMo</strong>
+              <small>GVHMR → SMPL body motion</small>
+            </div>
+          </div>
+          <div class="stack-node branch">
+            <img src="static/romo-hands-mark-ink.png" alt="">
+            <div>
+              <strong>RoMo Hands</strong>
+              <small>WiLoR → MANO hand motion</small>
+            </div>
+          </div>
+        </div>
+        <span class="stack-arrow" aria-hidden="true"></span>
+        <div class="stack-node tools">
+          <span class="stack-step">Shared tools</span>
+          <strong>Motion Toolbox</strong>
+          <small>Metrics · conversion · visualization</small>
+        </div>
+        <span class="stack-arrow" aria-hidden="true"></span>
+        <div class="stack-node community">
+          <span class="stack-step">Open research</span>
+          <strong>Your model</strong>
+          <small>Trained, compared, and shared</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band" id="build">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Build with RoMo</p>
+          <h2>Use it, compare on it, extend it</h2>
+          <p>The ecosystem gets more useful as more people train on it, report against it, and contribute back.</p>
+        </div>
+        <div class="feature-grid reveal">
+          <article class="feature-card">
+            <span class="feature-index">Train</span>
+            <h3>Start from scale</h3>
+            <p>Download a dataset from Hugging Face in the representation your model expects, from SMPL to HumanML3D to MANO.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-index">Compare</span>
+            <h3>Report on shared ground</h3>
+            <p>Evaluate with the Motion Toolbox and report per-category results, so improvements are visible where they actually happen.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-index">Contribute</span>
+            <h3>Grow the toolbox</h3>
+            <p>Add converters, metrics, and viewers on GitHub so the next dataset and the next paper start further ahead.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="cite">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Citation</p>
+        <h2>Cite the work you use</h2>
+        <p>If you use a RoMo dataset or the Motion Toolbox, please cite the corresponding paper.</p>
+      </div>
+      <div class="cite-grid">
+        <article class="cite-card reveal">
+          <div class="cite-head">
+            <h3>RoMo</h3>
+            <button class="copy-button" type="button" data-copy-target="bibtex-romo">Copy</button>
+          </div>
+<pre id="bibtex-romo">@inproceedings{Zhang2026RoMo,
+  author    = {Zhang, Jiahao and Liu, Joseph and Lee, Young-Yoon and Moon, Seonghyeon and Zordan, Victor and Tevet, Guy and Liu, Karen and Gould, Stephen and Jacob, Oren and Jiang, Haomiao and Kapadia, Mubbasir and Ben-Shabat, Yizhak},
+  title     = {RoMo: A Large-Scale, Richly Organized Dataset and Semantic Taxonomy for Human Motion Generation},
+  booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2026},
+}</pre>
+        </article>
+        <article class="cite-card reveal">
+          <div class="cite-head">
+            <h3>RoMo Hands</h3>
+            <button class="copy-button" type="button" data-copy-target="bibtex-romo-hands">Copy</button>
+          </div>
+<pre id="bibtex-romo-hands">@inproceedings{BenShabat2026RoMoHands,
+  author    = {Ben-Shabat, Yizhak and Zhang, Jiahao and Liu, Joseph and Moon, Seonghyeon and Lee, Young-Yoon and Jiang, Haomiao and Jacob, Oren and Kapadia, Mubbasir},
+  title     = {{RoMo Hands}: A Large Scale Richly Organized Text to Hand Motion Dataset},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2026},
+}</pre>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <p>RoMo · Open data and tools for motion generation research</p>
+      <p>RoMo and RoMo Hands are released under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a> for non-commercial research use.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" aria-label="Scroll to top">↑</button>
+  <script src="static/js/ecosystem.js?v=2"></script>
+</body>
+</html>
